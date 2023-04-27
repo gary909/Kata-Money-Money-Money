@@ -1,5 +1,15 @@
 function calculateYears(principal, interest, tax, desired) {
-    // your code
+    let years = 0;
+    if(principal == desired){
+        return 0;
+    } else {
+        while(principal < desired){
+            let gains = principal * interest - (principal * interest * tax);
+            principal = principal + gains;
+            years = years + 1;
+        }
+        return years;
+    }
 }
 
 console.log(calculateYears(1000, 0.05, 0.18, 1100)); // 3
